@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Devi Prasad Chinthamreddy — Full Stack Developer building scalable web applications, REST APIs, and geospatial platforms with Python, FastAPI, Flask, React.js, PostgreSQL, and Docker."
+    />
+    <meta name="theme-color" content="#000000" />
+    <title>Devi Prasad Chinthamreddy — Full Stack Developer</title>
+
+    <!-- Preconnect & Modern Typography (Inter + JetBrains Mono) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <!-- Custom Cursor (Prompt 10: disabled automatically on touch devices) -->
+    <div class="custom-cursor-dot" id="cursor-dot" aria-hidden="true"></div>
+    <div class="custom-cursor-ring" id="cursor-ring" aria-hidden="true"></div>
+
+    <!-- Minimal 3D Model Loader Indicator (Prompt 08) -->
+    <div class="model-loader" id="model-loader" aria-hidden="true">
+      <span class="model-loader__spinner"></span>
+      <span class="model-loader__text">Initializing 3D Scene…</span>
+    </div>
+
+    <!-- Full-screen Three.js Canvas (Prompts 06, 07, 08, 09: 3D Hero Object + 3,000 Particle Field) -->
+    <canvas id="webgl-canvas" aria-hidden="true"></canvas>
+
+    <!-- Top Navigation -->
+    <header class="site-header" id="top">
+      <div class="container header-inner">
+        <a href="#hero" class="brand-logo" aria-label="Devi Prasad Chinthamreddy Home">
+          <span class="brand-logo__mark">DP</span>
+          <span class="brand-logo__text">
+            DEVI PRASAD
+            <small>FULL STACK DEVELOPER</small>
+          </span>
+        </a>
+
+        <nav class="site-nav" aria-label="Primary Navigation">
+          <a href="#about" class="site-nav__link">Experience</a>
+          <a href="#services" class="site-nav__link">Services</a>
+          <a href="#projects" class="site-nav__link">Projects</a>
+          <a href="#process" class="site-nav__link">Process</a>
+          <a href="#impact" class="site-nav__link">Impact</a>
+        </nav>
+
+        <div class="header-actions">
+          <a
+            href="/Devi_Prasad_Full_Stack_Developer_Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn--ghost btn--sm"
+            data-magnetic
+          >
+            <span>Resume PDF</span>
+          </a>
+          <a
+            href="mailto:cdpreddyap@gmail.com"
+            class="btn btn--primary btn--sm"
+            data-magnetic
+          >
+            <span>Hire Me</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <!-- =====================================================================
+           SECTION 01 · HERO (Prompts 01, 05, 06, 10)
+           ===================================================================== -->
+      <section class="section hero" id="hero">
+        <div class="container hero__container">
+          <div class="hero__content">
+            <div class="eyebrow-pill" data-reveal>
+              <span class="status-dot"></span>
+              <span>Full Stack Developer @ IIT Tirupati Navavishkar I-Hub Foundation (IITTNiF)</span>
+            </div>
+
+            <!-- Prompt 05: Split headline into words that slide up from behind a mask -->
+            <h1 class="hero__title" data-split-words>
+              Devi Prasad Chinthamreddy — Engineering Full-Stack &amp; Geospatial Web Platforms.
+            </h1>
+
+            <p class="hero__subtitle" data-reveal>
+              Full Stack Developer with professional experience building and supporting web
+              applications using <strong>Python, FastAPI, Flask, REST APIs, PostgreSQL, JavaScript</strong>,
+              and <strong>React.js</strong>. Hands-on experience with <strong>Git/GitHub, Docker</strong>,
+              deployment, testing, debugging, and application optimization — advancing into
+              <strong>DevOps, Cloud Engineering, and Site Reliability Engineering</strong>.
+            </p>
+
+            <div class="hero__cta-group" data-reveal>
+              <a href="#projects" class="btn btn--primary" data-magnetic>
+                <span>View Flagship Projects</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </a>
+              <a
+                href="/Devi_Prasad_Full_Stack_Developer_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn--ghost"
+                data-magnetic
+              >
+                <span>View Resume PDF</span>
+              </a>
+              <a
+                href="https://github.com/deviprasad101"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn--ghost"
+                data-magnetic
+              >
+                <span>GitHub · @deviprasad101</span>
+              </a>
+              <a
+                href="mailto:cdpreddyap@gmail.com"
+                class="btn btn--ghost"
+                data-magnetic
+              >
+                <span>cdpreddyap@gmail.com</span>
+              </a>
+            </div>
+
+            <div class="hero__meta-strip" data-reveal>
+              <div class="meta-item">
+                <span class="meta-item__label">Location</span>
+                <span class="meta-item__value">Tirupati, Andhra Pradesh, India</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-item__label">Phone</span>
+                <a href="tel:+916281604440" class="meta-item__value">+91 6281604440</a>
+              </div>
+              <div class="meta-item">
+                <span class="meta-item__label">Languages</span>
+                <span class="meta-item__value">English · Telugu</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Prompt 10 #4: Animated Counters when entering viewport -->
+          <div class="stats-grid" data-reveal>
+            <div class="stat-card" data-tilt>
+              <div class="stat-card__number">
+                <span data-counter="11" data-decimals="0">0</span><span class="stat-card__suffix">+</span>
+              </div>
+              <p class="stat-card__label">Months @ IITTNiF Full Stack Role (11/2025 – 09/2026)</p>
+            </div>
+
+            <div class="stat-card" data-tilt>
+              <div class="stat-card__number">
+                <span data-counter="2" data-decimals="0">0</span><span class="stat-card__suffix">x</span>
+              </div>
+              <p class="stat-card__label">Production Geospatial &amp; Full-Stack Platforms Shipped</p>
+            </div>
+
+            <div class="stat-card" data-tilt>
+              <div class="stat-card__number">
+                <span data-counter="18" data-decimals="0">0</span><span class="stat-card__suffix">+</span>
+              </div>
+              <p class="stat-card__label">Technologies, Databases &amp; AI Engineering Tools</p>
+            </div>
+
+            <div class="stat-card" data-tilt>
+              <div class="stat-card__number">
+                <span data-counter="8.3" data-decimals="1">0</span><span class="stat-card__suffix"> CGPA</span>
+              </div>
+              <p class="stat-card__label">Academic Excellence (7.06 B.Tech CSE-AIML · 8.3 SSC)</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           SECTION 02 · VALUE PROPOSITION, EXPERIENCE & EDUCATION (Prompt 01)
+           ===================================================================== -->
+      <section class="section value-prop" id="about">
+        <div class="container">
+          <div class="section-header" data-reveal>
+            <span class="section-tag">01 // VALUE PROPOSITION &amp; CREDENTIALS</span>
+            <h2 class="section-title">
+              Bridging Full-Stack Product Engineering with Cloud, Docker &amp; Geospatial Intelligence.
+            </h2>
+            <p class="section-desc">
+              Backed by hands-on engineering at IIT Tirupati Navavishkar I-Hub Foundation (IITTNiF)
+              and a B.Tech in Computer Science &amp; Engineering (AI &amp; ML), I build end-to-end
+              systems that turn complex spatial and relational data into fast, reliable web interfaces.
+            </p>
+          </div>
+
+          <div class="credentials-grid">
+            <!-- Professional Experience Column -->
+            <div class="credential-panel" data-reveal data-tilt>
+              <div class="panel-header">
+                <span class="panel-badge">PROFESSIONAL EXPERIENCE</span>
+                <span class="panel-date">11/2025 – 09/2026</span>
+              </div>
+              <h3 class="panel-title">Full Stack Developer</h3>
+              <p class="panel-org">
+                IIT Tirupati Navavishkar I-Hub Foundation (IITTNiF) · Tirupati, India
+              </p>
+              <ul class="feature-list">
+                <li>
+                  Developed full-stack applications using <strong>Python, FastAPI, Flask, React.js, HTML, CSS</strong>,
+                  and <strong>JavaScript</strong>.
+                </li>
+                <li>
+                  Built and integrated high-throughput <strong>REST APIs with PostgreSQL</strong> using optimized
+                  <strong>SQL queries</strong>.
+                </li>
+                <li>
+                  Used <strong>Git/GitHub</strong> for version control and supported end-to-end testing, debugging,
+                  deployment, and application performance optimization.
+                </li>
+                <li>
+                  Implemented responsive web interfaces and used <strong>Docker</strong> for application
+                  containerization and reproducible deployment.
+                </li>
+              </ul>
+            </div>
+
+            <!-- Education & Academic Foundation Column -->
+            <div class="credential-panel" data-reveal data-tilt>
+              <div class="panel-header">
+                <span class="panel-badge">EDUCATION</span>
+                <span class="panel-date">2018 – 2025</span>
+              </div>
+              <h3 class="panel-title">Academic Background</h3>
+              <p class="panel-org">Computer Science &amp; Engineering (AI &amp; ML)</p>
+
+              <div class="timeline-list">
+                <div class="timeline-item">
+                  <div class="timeline-item__top">
+                    <h4>B.Tech — CSE (AIML)</h4>
+                    <span class="timeline-item__score">7.06 CGPA</span>
+                  </div>
+                  <p class="timeline-item__sub">
+                    Malla Reddy Engineering College (2021 – 2025) · Hyderabad, India
+                  </p>
+                </div>
+
+                <div class="timeline-item">
+                  <div class="timeline-item__top">
+                    <h4>Intermediate (MPC)</h4>
+                    <span class="timeline-item__score">7.17 CGPA</span>
+                  </div>
+                  <p class="timeline-item__sub">
+                    Viswa Sai Junior College (2020 – 2021) · Nellore, Andhra Pradesh
+                  </p>
+                </div>
+
+                <div class="timeline-item">
+                  <div class="timeline-item__top">
+                    <h4>Secondary School Certificate (SSC)</h4>
+                    <span class="timeline-item__score">8.3 CGPA</span>
+                  </div>
+                  <p class="timeline-item__sub">
+                    Narayana (2018 – 2019) · Nellore, Andhra Pradesh
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Complete Skills Matrix from PDF -->
+          <div class="skills-showcase" data-reveal>
+            <div class="skills-showcase__header">
+              <span class="section-tag">TECHNICAL ARSENAL</span>
+              <h3>Core Stack, DevOps &amp; AI-Assisted Workflow</h3>
+            </div>
+            <div class="skills-categories">
+              <div class="skill-group" data-tilt>
+                <span class="skill-group__title">Programming &amp; Web</span>
+                <div class="skill-pills">
+                  <span class="pill pill--accent">Python</span>
+                  <span class="pill pill--accent">JavaScript</span>
+                  <span class="pill">React.js</span>
+                  <span class="pill">HTML5</span>
+                  <span class="pill">CSS3</span>
+                </div>
+              </div>
+
+              <div class="skill-group" data-tilt>
+                <span class="skill-group__title">Backend &amp; Databases</span>
+                <div class="skill-pills">
+                  <span class="pill pill--accent">FastAPI</span>
+                  <span class="pill pill--accent">Flask</span>
+                  <span class="pill">REST APIs</span>
+                  <span class="pill">SQL</span>
+                  <span class="pill">PostgreSQL</span>
+                  <span class="pill">PostGIS / SQLite</span>
+                </div>
+              </div>
+
+              <div class="skill-group" data-tilt>
+                <span class="skill-group__title">DevOps, GIS &amp; Versioning</span>
+                <div class="skill-pills">
+                  <span class="pill pill--accent">Docker</span>
+                  <span class="pill">Git</span>
+                  <span class="pill">GitHub</span>
+                  <span class="pill">GeoServer</span>
+                  <span class="pill">Leaflet / OSRM</span>
+                  <span class="pill">Cesium 3D / GDAL / PDAL</span>
+                </div>
+              </div>
+
+              <div class="skill-group" data-tilt>
+                <span class="skill-group__title">AI Development &amp; Soft Skills</span>
+                <div class="skill-pills">
+                  <span class="pill pill--accent">Cursor</span>
+                  <span class="pill pill--accent">Antigravity</span>
+                  <span class="pill">Claude AI</span>
+                  <span class="pill">ChatGPT</span>
+                  <span class="pill">VS Code</span>
+                  <span class="pill">Stitch</span>
+                  <span class="pill">Problem-Solving</span>
+                  <span class="pill">Team Collaboration</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           SECTION 03 · SERVICES (3 CARDS + SCROLL-LINKED 3D RETURN ON RIGHT)
+           (Prompts 01, 07, 10)
+           ===================================================================== -->
+      <section class="section services" id="services">
+        <div class="container">
+          <div class="services-layout">
+            <div class="services-layout__left">
+              <div class="section-header" data-reveal>
+                <span class="section-tag">02 // SERVICES &amp; SPECIALIZATIONS</span>
+                <h2 class="section-title">
+                  Three Pillars of Engineering Delivery.
+                </h2>
+                <p class="section-desc">
+                  From high-concurrency Python APIs to interactive 2D/3D geospatial catalogs and
+                  Dockerized deployments, every layer is engineered for clarity, speed, and reliability.
+                </p>
+              </div>
+
+              <!-- 3 Service Cards (Prompt 01 + Prompt 10 3D Tilt) -->
+              <div class="services-cards">
+                <article class="service-card" data-reveal data-tilt>
+                  <div class="service-card__index">01</div>
+                  <div class="service-card__body">
+                    <h3 class="service-card__title">Full-Stack Web &amp; REST API Architecture</h3>
+                    <p class="service-card__text">
+                      End-to-end web application development combining responsive
+                      <strong>React.js, HTML5, CSS, and JavaScript</strong> frontends with fast, modular
+                      <strong>Python, FastAPI, and Flask</strong> backends and session-based authentication.
+                    </p>
+                    <div class="service-card__tags">
+                      <span>Python</span>
+                      <span>FastAPI</span>
+                      <span>Flask</span>
+                      <span>React.js</span>
+                      <span>REST APIs</span>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="service-card" data-reveal data-tilt>
+                  <div class="service-card__index">02</div>
+                  <div class="service-card__body">
+                    <h3 class="service-card__title">PostgreSQL, PostGIS &amp; Geospatial Systems</h3>
+                    <p class="service-card__text">
+                      Designing relational and spatial databases with <strong>PostgreSQL, PostGIS, and SQLite</strong>,
+                      integrated with <strong>GeoServer, GDAL/PDAL/ogr2ogr, Leaflet, OpenStreetMap/OSRM</strong>,
+                      and <strong>Cesium 3D</strong> for unified vector, raster, LAS, and 3D visualization.
+                    </p>
+                    <div class="service-card__tags">
+                      <span>PostgreSQL</span>
+                      <span>PostGIS</span>
+                      <span>GeoServer</span>
+                      <span>Leaflet / OSRM</span>
+                      <span>Cesium 3D</span>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="service-card" data-reveal data-tilt>
+                  <div class="service-card__index">03</div>
+                  <div class="service-card__body">
+                    <h3 class="service-card__title">Docker Containerization, DevOps &amp; AI Velocity</h3>
+                    <p class="service-card__text">
+                      Containerizing multi-service stacks with <strong>Docker</strong>, managing clean
+                      <strong>Git/GitHub</strong> release pipelines, optimizing SQL &amp; bundle performance, and
+                      accelerating engineering cycles with <strong>Cursor, Antigravity, Claude AI, ChatGPT, and Stitch</strong>.
+                    </p>
+                    <div class="service-card__tags">
+                      <span>Docker</span>
+                      <span>Git / GitHub</span>
+                      <span>DevOps &amp; SRE</span>
+                      <span>AI-Assisted Dev</span>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+
+            <!-- Right column stage where the 3D object returns smaller on scroll (Prompt 07) -->
+            <aside class="services-layout__right" aria-label="3D Interactive Stage">
+              <div class="orbital-stage" data-reveal>
+                <div class="orbital-stage__badge">LIVE 3D SCROLL SYNC</div>
+                <div class="orbital-stage__viewport" id="services-3d-anchor"></div>
+                <div class="orbital-stage__caption">
+                  <p>
+                    <strong>Scroll-Linked 3D Core</strong> — Synchronized via GSAP ScrollTrigger scrub from Hero to Services.
+                  </p>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           SECTION 04 · FEATURED PROJECTS FROM RESUME PDF
+           ===================================================================== -->
+      <section class="section projects" id="projects">
+        <div class="container">
+          <div class="section-header" data-reveal>
+            <span class="section-tag">03 // FLAGSHIP SYSTEMS (FROM PORTFOLIO RESUME)</span>
+            <h2 class="section-title">Production Geospatial &amp; Full-Stack Projects.</h2>
+            <p class="section-desc">
+              Real-world platforms engineered to solve multi-stop route optimization, QR check-in
+              telemetry, and enterprise 2D/3D geospatial data cataloging.
+            </p>
+          </div>
+
+          <div class="projects-grid">
+            <!-- Project 1: GEO TRIP PLANNER -->
+            <article class="project-card" data-reveal data-tilt>
+              <div class="project-card__header">
+                <span class="project-card__num">PROJECT 01</span>
+                <span class="project-card__domain">Smart Tourism · Routing · QR Telemetry</span>
+              </div>
+
+              <h3 class="project-card__title">GEO TRIP PLANNER</h3>
+
+              <div class="project-card__case">
+                <div class="case-block">
+                  <span class="case-block__label">Problem</span>
+                  <p>
+                    Pilgrims struggle to plan multi-stop Tirupati trips, pick the right budget tier,
+                    and track temple visits without a simple digital flow.
+                  </p>
+                </div>
+
+                <div class="case-block">
+                  <span class="case-block__label">Solution</span>
+                  <p>
+                    Geo Trip Planner — budget-based packages, interactive place picker, dynamic route
+                    map, personal temple QR check-in, and real-time admin visit dashboard.
+                  </p>
+                </div>
+
+                <div class="case-block case-block--highlight">
+                  <span class="case-block__label">Outcome</span>
+                  <p>
+                    Users plan trips faster, share interactive routes on the map, staff scan QR codes
+                    to log temple visits, and admins monitor visitor analytics in one unified place.
+                  </p>
+                </div>
+              </div>
+
+              <div class="project-card__stack">
+                <span>Python Flask</span>
+                <span>HTML / CSS / JS</span>
+                <span>Leaflet</span>
+                <span>PostgreSQL / SQLite</span>
+                <span>OpenStreetMap / OSRM</span>
+                <span>Session-Based Auth</span>
+              </div>
+            </article>
+
+            <!-- Project 2: GEO INTEL META HUB -->
+            <article class="project-card" data-reveal data-tilt>
+              <div class="project-card__header">
+                <span class="project-card__num">PROJECT 02</span>
+                <span class="project-card__domain">Enterprise GIS · PostGIS · 3D Cesium</span>
+              </div>
+
+              <h3 class="project-card__title">GEO INTEL META HUB</h3>
+
+              <div class="project-card__case">
+                <div class="case-block">
+                  <span class="case-block__label">Problem</span>
+                  <p>
+                    Scattered geospatial data (vectors, rasters, LAS point clouds, and 3D models) is
+                    hard to store, publish, and view in one centralized place.
+                  </p>
+                </div>
+
+                <div class="case-block">
+                  <span class="case-block__label">Solution</span>
+                  <p>
+                    Automated pipeline where a Flask application ingests uploaded spatial files &rarr;
+                    processes into PostGIS + GeoServer &rarr; serves a unified web UI for search, 2D maps, and 3D globes.
+                  </p>
+                </div>
+
+                <div class="case-block case-block--highlight">
+                  <span class="case-block__label">Outcome</span>
+                  <p>
+                    Central metadata catalog with OGC WMS/WFS (plus rasters and 3D tiles) enabling
+                    users to discover, preview, and serve geospatial layers from a single platform.
+                  </p>
+                </div>
+              </div>
+
+              <div class="project-card__stack">
+                <span>Python / Flask</span>
+                <span>PostgreSQL / PostGIS</span>
+                <span>GeoServer</span>
+                <span>GDAL / PDAL / ogr2ogr</span>
+                <span>HTML / JS</span>
+                <span>Cesium 3D</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           SECTION 05 · PROCESS (4 STEPS — PINNED SECTION WITH #1A56FF PROGRESS BAR)
+           (Prompts 01 & 04: Pinned on Desktop, List on Mobile)
+           ===================================================================== -->
+      <section class="section process" id="process">
+        <div class="container process__pin-wrapper" id="process-pin-wrapper">
+          <div class="process__header" data-reveal>
+            <div>
+              <span class="section-tag">04 // ENGINEERING PROCESS</span>
+              <h2 class="section-title">How Complex Ideas Become Production Systems.</h2>
+            </div>
+            <p class="section-desc">
+              A disciplined 4-stage workflow forged at IITTNiF — moving from spatial/relational
+              schema design to Dockerized deployment.
+            </p>
+          </div>
+
+          <!-- Blue (#1A56FF) Progress Bar (Prompt 04) -->
+          <div class="process__progress-track" aria-hidden="true">
+            <div class="process__progress-bar" id="process-progress-bar"></div>
+          </div>
+
+          <!-- 4 Steps -->
+          <div class="process__steps" id="process-steps">
+            <article class="process-step is-active" data-step="1">
+              <div class="process-step__top">
+                <span class="process-step__num">STEP 01</span>
+                <span class="process-step__tag">Architecture &amp; Schema</span>
+              </div>
+              <h3 class="process-step__title">Problem Discovery &amp; Spatial/Relational Modeling</h3>
+              <p class="process-step__desc">
+                Deconstruct user and data bottlenecks — whether multi-stop pilgrimage routing or
+                heterogeneous LAS/raster/vector ingestion — into clean PostgreSQL, PostGIS, and SQLite schemas.
+              </p>
+            </article>
+
+            <article class="process-step" data-step="2">
+              <div class="process-step__top">
+                <span class="process-step__num">STEP 02</span>
+                <span class="process-step__tag">Backend &amp; Pipelines</span>
+              </div>
+              <h3 class="process-step__title">REST APIs &amp; Geospatial Processing</h3>
+              <p class="process-step__desc">
+                Build modular Python (FastAPI &amp; Flask) services, session authentication, SQL
+                query pipelines, and automated geospatial transformations with GDAL, PDAL, ogr2ogr,
+                OSRM, and GeoServer WMS/WFS endpoints.
+              </p>
+            </article>
+
+            <article class="process-step" data-step="3">
+              <div class="process-step__top">
+                <span class="process-step__num">STEP 03</span>
+                <span class="process-step__tag">Frontend &amp; AI Velocity</span>
+              </div>
+              <h3 class="process-step__title">Interactive UI &amp; AI-Assisted Optimization</h3>
+              <p class="process-step__desc">
+                Craft responsive interfaces using React.js, HTML5, CSS, Leaflet, and Cesium 3D while
+                accelerating debugging, code quality, and edge-case testing with Cursor, Antigravity,
+                Claude AI, and ChatGPT.
+              </p>
+            </article>
+
+            <article class="process-step" data-step="4">
+              <div class="process-step__top">
+                <span class="process-step__num">STEP 04</span>
+                <span class="process-step__tag">Containerization &amp; SRE</span>
+              </div>
+              <h3 class="process-step__title">Docker Packaging, Deployment &amp; Observability</h3>
+              <p class="process-step__desc">
+                Containerize applications with Docker, manage versioned releases through Git/GitHub,
+                and optimize runtime performance for reliable cloud and SRE-ready operations.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           SECTION 06 · TESTIMONIALS & IMPACT HIGHLIGHTS (Prompt 01 & 10)
+           ===================================================================== -->
+      <section class="section testimonials" id="impact">
+        <div class="container">
+          <div class="section-header" data-reveal>
+            <span class="section-tag">05 // VERIFIED OUTCOMES &amp; ENDORSEMENTS</span>
+            <h2 class="section-title">Engineered for Measurable Real-World Impact.</h2>
+            <p class="section-desc">
+              Key delivery highlights from IIT Tirupati Navavishkar I-Hub Foundation (IITTNiF) and
+              deployed full-stack geospatial platforms.
+            </p>
+          </div>
+
+          <div class="testimonials-grid">
+            <blockquote class="testimonial-card" data-reveal data-tilt>
+              <div class="testimonial-card__badge">IITTNiF · FULL STACK DELIVERY</div>
+              <p class="testimonial-card__quote">
+                “Delivered full-stack web applications and RESTful APIs backed by PostgreSQL and
+                Docker containerization — streamlining testing, debugging, and production deployment
+                across research and geospatial initiatives.”
+              </p>
+              <footer class="testimonial-card__footer">
+                <strong>IIT Tirupati Navavishkar I-Hub Foundation</strong>
+                <span>Full Stack Developer Role · 11/2025 – 09/2026</span>
+              </footer>
+            </blockquote>
+
+            <blockquote class="testimonial-card" data-reveal data-tilt>
+              <div class="testimonial-card__badge">GEO TRIP PLANNER · OUTCOME</div>
+              <p class="testimonial-card__quote">
+                “Transformed multi-stop Tirupati pilgrimage planning with budget-tier packages,
+                interactive OSRM/Leaflet route maps, personal QR temple check-ins, and a unified
+                real-time administrator dashboard.”
+              </p>
+              <footer class="testimonial-card__footer">
+                <strong>Geo Trip Planner Architecture</strong>
+                <span>Flask · PostgreSQL/SQLite · Leaflet · OSRM</span>
+              </footer>
+            </blockquote>
+
+            <blockquote class="testimonial-card" data-reveal data-tilt>
+              <div class="testimonial-card__badge">GEO INTEL META HUB · OUTCOME</div>
+              <p class="testimonial-card__quote">
+                “Unified scattered vectors, rasters, LAS point clouds, and 3D models into a single
+                PostGIS + GeoServer catalog with OGC WMS/WFS and Cesium 3D preview capabilities.”
+              </p>
+              <footer class="testimonial-card__footer">
+                <strong>Geo Intel Meta Hub Platform</strong>
+                <span>Flask · PostGIS · GeoServer · GDAL/PDAL · Cesium</span>
+              </footer>
+            </blockquote>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           SECTION 07 · FINAL CALL TO ACTION (Prompt 01 & 10)
+           ===================================================================== -->
+      <section class="section cta-section" id="contact">
+        <div class="container">
+          <div class="cta-box" data-reveal>
+            <span class="section-tag">06 // INITIALIZE COLLABORATION</span>
+            <h2 class="cta-box__title">
+              Ready to Build Scalable Full-Stack, Geospatial, or Cloud-Native Systems?
+            </h2>
+            <p class="cta-box__text">
+              Available for Full Stack Developer, Python Backend, DevOps, Cloud Engineering, and
+              Site Reliability Engineering opportunities. Let’s connect and ship something exceptional.
+            </p>
+
+            <div class="cta-box__actions">
+              <a
+                href="mailto:cdpreddyap@gmail.com"
+                class="btn btn--primary btn--lg"
+                data-magnetic
+              >
+                <span>Email cdpreddyap@gmail.com</span>
+              </a>
+              <a
+                href="tel:+916281604440"
+                class="btn btn--ghost btn--lg"
+                data-magnetic
+              >
+                <span>Call +91 6281604440</span>
+              </a>
+              <a
+                href="https://deviprasad-portfolio.vercel.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn--ghost btn--lg"
+                data-magnetic
+              >
+                <span>deviprasad-portfolio.vercel.app</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- =====================================================================
+         SECTION 08 · SEMANTIC FOOTER (Prompt 01)
+         ===================================================================== -->
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <div class="brand-logo">
+            <span class="brand-logo__mark">DP</span>
+            <span class="brand-logo__text">
+              DEVI PRASAD CHINTHAMREDDY
+              <small>FULL STACK DEVELOPER · TIRUPATI, AP, INDIA</small>
+            </span>
+          </div>
+          <p class="footer-bio">
+            Arlapadu, Pellakuru, Tirupati, Andhra Pradesh · Born 10 Jan 2004 · Indian · Fluent in
+            English &amp; Telugu.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h3 class="footer-col__title">Navigation</h3>
+          <ul class="footer-links">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">Experience &amp; Education</a></li>
+            <li><a href="#services">Services &amp; Stack</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#process">Process</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3 class="footer-col__title">Profiles &amp; Direct Contact</h3>
+          <ul class="footer-links">
+            <li>
+              <a href="mailto:cdpreddyap@gmail.com">cdpreddyap@gmail.com</a>
+            </li>
+            <li>
+              <a href="tel:+916281604440">+91 6281604440</a>
+            </li>
+            <li>
+              <a href="https://github.com/deviprasad101" target="_blank" rel="noopener noreferrer">
+                github.com/deviprasad101
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.linkedin.com/in/deviprasad-reddy-chinthamreddy"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                LinkedIn · Deviprasad Reddy Chinthamreddy
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://deviprasad-portfolio.vercel.app"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                deviprasad-portfolio.vercel.app
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <span>&copy; 2026 Devi Prasad Chinthamreddy. All rights reserved.</span>
+        <span>Built with Vite · Three.js · GSAP ScrollTrigger · Lenis</span>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
